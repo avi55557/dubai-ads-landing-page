@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>AI Ads System | Dubai | 80% Lower Cost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A;
+            color: #FFFFFF;
+            line-height: 1.5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 4%; }
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.5); }
+            50% { box-shadow: 0 0 0 15px rgba(249,115,22,0.2); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(34,197,94,0.4); box-shadow: 0 0 0 0 rgba(34,197,94,0.2); }
+            50% { border-color: #22C55E; box-shadow: 0 0 0 6px rgba(34,197,94,0.3); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes blinkCursor {
+            0%, 100% { border-color: #F97316; }
+            50% { border-color: transparent; }
+        }
+
+        .animate-fadeUp { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+        .animate-slideUp { animation: slideInUp 0.7s cubic-bezier(0.2,0.9,0.4,1) forwards; opacity: 0; }
+        .pulse-btn { animation: pulseGlow 1.8s infinite; }
+        .float-icon { animation: float 3s ease infinite; }
+        .border-pulse { animation: borderPulse 2s infinite; }
+        .shimmer-text {
+            background: linear-gradient(90deg, #F97316, #FFD700, #F97316);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 2s linear infinite;
+        }
+        .typing-text {
+            border-right: 3px solid #F97316;
+            animation: blinkCursor 0.75s step-end infinite;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F97316, #EA580C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #FFFFFF;
+            opacity: 0.8;
+            transition: 0.2s;
+        }
+        .nav-links a:hover { opacity: 1; color: #F97316; }
+        .btn-outline {
+            border: 1px solid #F97316;
+            background: transparent;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #F97316;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: #F97316;
+            color: #0A0A0A;
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: linear-gradient(95deg, #F97316, #EA580C);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+        }
+
+        .hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        /* Before vs After */
+        .comparison-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: stretch;
+            margin: 2rem 0;
+        }
+        .comparison-before-card, .comparison-after-card {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 32px;
+            padding: 2rem;
+            transition: all 0.4s;
+        }
+        .comparison-before-card {
+            background: linear-gradient(145deg, rgba(239,68,68,0.15), rgba(0,0,0,0.6));
+            border: 1px solid rgba(239,68,68,0.3);
+        }
+        .comparison-after-card {
+            background: linear-gradient(145deg, rgba(34,197,94,0.15), rgba(0,0,0,0.6));
+            border: 2px solid #22C55E;
+        }
+        .comparison-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .badge-before { background: rgba(239,68,68,0.2); color: #EF4444; border: 1px solid #EF4444; }
+        .badge-after { background: rgba(34,197,94,0.2); color: #22C55E; border: 1px solid #22C55E; }
+        .price-strike { text-decoration: line-through; color: #EF4444; font-size: 1.2rem; }
+        .price-new { font-size: 1.5rem; font-weight: 800; color: #22C55E; }
+        .saving-badge {
+            background: #22C55E;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+        .feature-list { margin: 1.5rem 0; list-style: none; }
+        .feature-list li { margin: 0.8rem 0; display: flex; align-items: center; gap: 0.5rem; }
+        .feature-list .fa-times { color: #EF4444; }
+        .feature-list .fa-check { color: #22C55E; }
+        .vs-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #EF4444, #F97316, #22C55E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        @media (max-width: 768px) {
+            .comparison-wrapper { flex-direction: column; }
+            .vs-divider { transform: rotate(90deg); margin: 0.5rem 0; }
+        }
+        .savings-counter {
+            background: rgba(34,197,94,0.1);
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .counter-number { font-size: 2rem; font-weight: 900; color: #22C55E; }
+
+        .services-grid, .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .service-card, .why-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .service-card:hover, .why-card:hover {
+            transform: translateY(-5px);
+            border-color: #F97316;
+        }
+        .service-card i, .why-card i { font-size: 2rem; color: #F97316; margin-bottom: 1rem; }
+
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .price-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 1.8rem;
+            width: 100%;
+            max-width: 300px;
+            transition: all 0.3s;
+        }
+        .price-card:hover { transform: translateY(-5px); border-color: #F97316; }
+        .price-card.popular { border: 2px solid #F97316; background: rgba(249,115,22,0.1); }
+        .popular-badge {
+            background: #F97316;
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+        }
+        .price-amount { font-size: 1.8rem; font-weight: 800; color: #F97316; margin: 1rem 0; }
+
+        .testimonials-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 320px;
+            border-left: 4px solid #F97316;
+        }
+
+        .form-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 40px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-top: 0.5rem;
+            font-family: inherit;
+            color: white;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #F97316;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .trust-badge {
+            background: rgba(255,255,255,0.05);
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .urgency-bar {
+            background: rgba(249,115,22,0.15);
+            border-left: 4px solid #F97316;
+            padding: 1rem;
+            border-radius: 60px;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 2rem;
+        }
+        .float-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+            z-index: 99;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-container {
+            background: #111;
+            max-width: 460px;
+            width: 90%;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid #F97316;
+        }
+        .popup-header {
+            background: linear-gradient(135deg, #F97316, #EA580C);
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .close-popup {
+            position: absolute;
+            right: 16px;
+            top: 12px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+        .popup-body { padding: 1.5rem; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="nav">
+            <div class="logo"><h2>AI Ads System</h2></div>
+            <div class="nav-links">
+                <a href="#">Solutions</a>
+                <a href="#pricing">Pricing</a>
+                <button class="btn-outline" id="openPopupBtn">Free Audit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="container">
+        <h1>Dubai agencies charge <span class="shimmer-text">AED 50–150 per lead</span><br>We deliver at <span class="float-icon">AED 3–12</span> (80% less)</h1>
+        <p class="typing-text" id="typingElement" style="font-size:1rem; color:#9CA3AF; margin-top:0.5rem;"></p>
+        <button class="btn-primary pulse-btn" id="heroPopupBtn"><i class="fab fa-whatsapp"></i> Get Free Audit →</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="trust-badges animate-fadeUp">
+        <div class="trust-badge"><i class="fab fa-meta"></i> Meta Certified</div>
+        <div class="trust-badge"><i class="fas fa-chart-line"></i> ₹1Cr+ Ad Spend</div>
+        <div class="trust-badge"><i class="fas fa-building"></i> DMCC | DED</div>
+        <div class="trust-badge"><i class="fas fa-clock"></i> 15 Min Response</div>
+        <div class="trust-badge"><i class="fas fa-credit-card"></i> Card | PayPal | Crypto</div>
+    </div>
+
+    <div class="animate-slideUp">
+        <div class="comparison-wrapper">
+            <div class="comparison-before-card">
+                <div class="comparison-badge badge-before"><i class="fas fa-thumbs-down"></i> BEFORE (Other Agencies)</div>
+                <div class="price-strike">AED 85 – 150</div>
+                <div class="feature-list">
+                    <li><i class="fas fa-times"></i> AED 85–150 per lead</li>
+                    <li><i class="fas fa-times"></i> Generic creatives</li>
+                    <li><i class="fas fa-times"></i> No psychology targeting</li>
+                    <li><i class="fas fa-times"></i> No guarantee</li>
+                </div>
+                <div class="savings-counter"><i class="fas fa-chart-line"></i> You are overpaying 80%</div>
+            </div>
+            <div class="vs-divider"><i class="fas fa-arrow-right"></i></div>
+            <div class="comparison-after-card border-pulse">
+                <div class="comparison-badge badge-after"><i class="fas fa-thumbs-up"></i> AFTER (AI Ads System)</div>
+                <div><span class="price-new">AED 3 – 12</span><span class="saving-badge">SAVE 80%</span></div>
+                <div class="feature-list">
+                    <li><i class="fas fa-check"></i> AED 3–12 per lead</li>
+                    <li><i class="fas fa-check"></i> Psychology-driven creatives</li>
+                    <li><i class="fas fa-check"></i> AI + emotion targeting</li>
+                    <li><i class="fas fa-check"></i> 30-50% lower guarantee</li>
+                </div>
+                <div class="savings-counter"><div class="counter-number" id="savingsCounter">0</div><div>Average AED saved per 100 leads</div></div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:1.5rem; background:rgba(249,115,22,0.1); padding:0.8rem; border-radius:60px;">
+            <i class="fas fa-bolt" style="color:#F97316;"></i> <strong>Other agencies waste AED 85+ per lead. We deliver the SAME lead at AED 8. Save AED 7,700 per 100 leads.</strong>
+        </div>
+    </div>
+
+    <div class="animate-fadeUp">
+        <h2 style="font-size:1.5rem; text-align:center; margin:2rem 0 1rem;">Why Dubai Businesses Choose Us</h2>
+        <div class="why-grid">
+            <div class="why-card"><i class="fas fa-chart-line"></i><h3>30-50% Lower Ad Cost</h3><p>Guaranteed or next month FREE</p></div>
+            <div class="why-card"><i class="fas fa-brain"></i><h3>Psychology-Based Ads</h3><p>Target emotions, not just demographics</p></div>
+            <div class="why-card"><i class="fas fa-rocket"></i><h3>Results in 7 Days</h3><p>See leads in first week</p></div>
+            <div class="why-card"><i class="fas fa-shield-alt"></i><h3>No Risk Trial</h3><p>Pay only if you see results</p></div>
+        </div>
+    </div>
+
+    <div class="testimonials-grid animate-fadeUp">
+        <div class="testimonial-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i><p>"CPL dropped from AED 180 to AED 25 in 3 days. Best decision."</p><h4>Dr. Ahmed - Dubai Clinic</h4></div>
+        <div class="testimonial-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i><p>"Finally an agency that understands Dubai. Bookings up 5x."</p><h4>Fatima - JBR Restaurant</h4></div>
+        <div class="testimonial-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i><p>"20+ real estate leads in first week. Game changer."</p><h4>Omar - Real Estate</h4></div>
+        <div class="testimonial-card"><i class="fab fa-whatsapp" style="color:#25D366;"></i><p>"80% lower cost than my previous agency. Unbelievable."</p><h4>Sarah - E-commerce Dubai</h4></div>
+    </div>
+
+    <div class="urgency-bar"><i class="fas fa-bell"></i> Only 3 Dubai clients accepted this week! Slots filling fast. <i class="fas fa-fire"></i></div>
+
+    <div id="pricing">
+        <h2 style="font-size:1.5rem; text-align:center;">Pricing — 80% Lower</h2>
+        <div class="pricing-grid">
+            <div class="price-card"><h3>Trial</h3><div class="price-amount">AED 99</div><div>/7 days</div><button class="btn-primary trial-wa-btn" style="width:100%; margin-top:1rem;">Start Trial</button></div>
+            <div class="price-card popular"><div class="popular-badge">🔥 MOST POPULAR</div><h3>PRO</h3><div class="price-amount">AED 499</div><div>/month</div><button class="btn-primary pro-wa-btn" style="width:100%; margin-top:1rem;">Choose PRO</button></div>
+            <div class="price-card"><h3>Premium</h3><div class="price-amount">AED 999</div><div>/month</div><button class="btn-primary premium-wa-btn" style="width:100%; margin-top:1rem;">Go Premium</button></div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-grid">
+            <div><h3>Free Audit — No Obligation</h3><p>We'll analyze your current ads and show exact savings.</p><p><i class="fab fa-whatsapp"></i> Response within 15 minutes</p></div>
+            <form id="leadForm"><input type="text" id="name" placeholder="Full Name" required><input type="tel" id="phone" placeholder="WhatsApp Number" required><input type="text" id="website" placeholder="FB/IG Page Link" required><button type="submit" class="btn-primary" style="width:100%; margin-top:1rem;"><i class="fab fa-whatsapp"></i> Send Request</button></form>
+        </div>
+    </div>
+
+    <footer>
+        <p>AI Ads System — Meta Certified | +91 87677 28370 | aavizoninfo@gmail.com</p>
+        <p style="font-size:0.7rem;">📍 India (Remote) | Serving Dubai & UAE | Payment: Credit Card | PayPal | Crypto | Bank Transfer</p>
+    </footer>
+</div>
+
+<a href="https://wa.me/918767728370?text=I%20want%20free%20ads%20audit%20Dubai" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<div id="freePopup" class="popup-overlay"><div class="popup-container"><div class="popup-header"><i class="fas fa-gem"></i><h3>Free Ads Audit — Dubai</h3><button class="close-popup" id="closePopupBtn">&times;</button></div><div class="popup-body"><form id="popupForm"><input type="text" id="popupName" placeholder="Full Name" required><input type="tel" id="popupPhone" placeholder="WhatsApp" required><input type="text" id="popupWebsite" placeholder="FB/IG Page" required><button type="submit" class="btn-primary" style="width:100%;">Get Free Audit</button></form></div></div></div>
+
+<script>
+    // Typing Animation
+    const phrases = ["We don't run ads... We engineer customer decisions", "AED 3–12 leads, not AED 50–150", "80% lower cost than Dubai agencies"];
+    let i=0, j=0, currentPhrase=[], isDeleting=false;
+    function typeEffect() {
+        const span = document.getElementById('typingElement');
+        if (!span) return;
+        if (isDeleting) {
+            currentPhrase.pop();
+            span.textContent = currentPhrase.join('');
+            if (currentPhrase.length === 0) {
+                isDeleting = false;
+                i = (i + 1) % phrases.length;
+            }
+        } else {
+            let full = phrases[i];
+            if (j < full.length) {
+                currentPhrase.push(full[j]);
+                span.textContent = currentPhrase.join('');
+                j++;
+            }
+            if (j === full.length) {
+                isDeleting = true;
+                j = 0;
+            }
+        }
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+    typeEffect();
+
+    // Savings Counter
+    const counterEl = document.getElementById('savingsCounter');
+    let counterAnimated = false;
+    function animateSavings() {
+        if (counterAnimated) return;
+        counterAnimated = true;
+        let target = 7700, current = 0, step = target / 50;
+        let interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(interval);
+            }
+            counterEl.textContent = 'AED ' + Math.floor(current).toLocaleString();
+        }, 30);
+    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) animateSavings(); });
+    }, { threshold: 0.3 });
+    if (counterEl) observer.observe(counterEl);
+
+    // Popup
+    const popup = document.getElementById('freePopup');
+    let timer = setTimeout(() => { popup.style.display = 'flex'; document.body.style.overflow = 'hidden'; }, 7000);
+    document.getElementById('openPopupBtn')?.addEventListener('click', () => { clearTimeout(timer); popup.style.display = 'flex'; document.body.style.overflow = 'hidden'; });
+    document.getElementById('heroPopupBtn')?.addEventListener('click', () => { clearTimeout(timer); popup.style.display = 'flex'; document.body.style.overflow = 'hidden'; });
+    document.getElementById('closePopupBtn')?.addEventListener('click', () => { popup.style.display = 'none'; document.body.style.overflow = 'auto'; });
+    window.addEventListener('click', (e) => { if (e.target === popup) { popup.style.display = 'none'; document.body.style.overflow = 'auto'; } });
+
+    document.getElementById('popupForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let n = document.getElementById('popupName').value;
+        let p = document.getElementById('popupPhone').value;
+        let w = document.getElementById('popupWebsite').value;
+        if (!n || !p || !w) { alert("Please fill all fields"); return; }
+        window.open(`https://wa.me/918767728370?text=Free Audit Dubai%0AName: ${n}%0APhone: ${p}%0APage: ${w}`, '_blank');
+        alert("✅ Avi will reply within 15 minutes.");
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    document.getElementById('leadForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let n = document.getElementById('name').value;
+        let p = document.getElementById('phone').value;
+        let w = document.getElementById('website').value;
+        if (!n || !p || !w) { alert("Please fill all fields"); return; }
+        window.open(`https://wa.me/918767728370?text=New Lead Dubai%0AName: ${n}%0APhone: ${p}%0APage: ${w}`, '_blank');
+        alert("✅ Avi will reply within 15 minutes.");
+    });
+
+    document.querySelectorAll('.trial-wa-btn').forEach(btn => btn.onclick = () => window.open('https://wa.me/918767728370?text=I want TRIAL plan (AED 99) Dubai', '_blank'));
+    document.querySelectorAll('.pro-wa-btn').forEach(btn => btn.onclick = () => window.open('https://wa.me/918767728370?text=I want PRO plan (AED 499) Dubai', '_blank'));
+    document.querySelectorAll('.premium-wa-btn').forEach(btn => btn.onclick = () => window.open('https://wa.me/918767728370?text=I want PREMIUM plan (AED 999) Dubai', '_blank'));
+</script>
+</body>
+</html>
